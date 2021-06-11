@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from '../user';
+import { NgForm } from '@angular/forms';
+import {Client} from '../client';
+
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { CompteService } from "../compte.service";
+
+
+
+
 
 @Component({
   selector: 'app-parametre',
@@ -8,11 +17,42 @@ import {User} from '../user';
 })
 export class ParametreComponent implements OnInit {
 
-  user: User=new User("","","",0,"");
+  public client!: Client
+  public id = ""
 
-  constructor() { }
+  constructor(private route: ActivatedRoute,private router: Router, private compteService: CompteService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void{
+   // this.client = new Client();\
+   let currentClient = localStorage.getItem('currentClient');
+   let id = 'gg';
+
+    //this.id = this.route.snapshot.params['id'];
+    
+    this.compteService.getClient(id)
+      .subscribe(data => {
+        console.log(data)
+        this.client = data;
+      }, error => console.log(error));
+  }
+
+  
+    
+  updateEmployee() {
+    this.compteService.updateEmployee(this.id, this.client)
+      .subscribe(data => {
+        console.log(data);
+        this.client = data as Client;
+        this.gotoList();
+      }, error => console.log(error));
+  }
+
+  onSubmit() {
+    this.updateEmployee();    
+  }
+
+  gotoList() {
+    this.router.navigate(['/clients']);
   }
 
 }
