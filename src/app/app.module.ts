@@ -11,6 +11,7 @@ import { VirementComponent } from './virement/virement.component';
 import { ParametreComponent } from './parametre/parametre.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { CompteService } from './parametre.component';
 
 
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

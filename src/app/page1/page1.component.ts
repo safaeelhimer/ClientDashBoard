@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable } from "rxjs";
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
@@ -20,11 +20,41 @@ export class Page1Component implements OnInit {
   ngOnInit(): void {
     let currentClient = localStorage.getItem('currentClient')
   }
+  @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
 
-  onSubmit(form: NgForm) {
-    console.log(form.value);
+  onSubmit(recharge: NgForm) {
+    
+    /*  let a = this.compteService.verser(recharge.value).subscribe(
+        (response:any) => {
+        if(response){
+          console.log(response);
+          this.notifierService.showNotification("Transaction done successfully" ,"",'success');
+  
+        }else{
+          this.notifierService.showNotification("incorrect rib number !","",'danger');
+  
+        }
+        console.log(response)},
+        (err : HttpErrorResponse) => {
+          console.log (err)});*/
+    }
 
+
+
+  toggleSideBar() {
+    this.toggleSideBarForMe.emit();
+    setTimeout(() => {
+      window.dispatchEvent(
+        new Event('resize')
+      );
+    }, 300);
   }
+  
+  logout(){
+    localStorage.removeItem("currentClient");
+    this.router.navigate(['/login']);
+  }
+
 
 
 
@@ -37,6 +67,7 @@ export class Page1Component implements OnInit {
 
     alert("BOnjour vous venez de charger le numero de telephone, pour envoyer un recu dans votre boite mail confirme");
   }
+
 
 
 }

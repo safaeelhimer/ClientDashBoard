@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     let myLocalstorage = localStorage.getItem("currentAgent");
     if(myLocalstorage){
-        this.router.navigate(['']);
+        this.router.navigate(['/home']);
     }
   }
 

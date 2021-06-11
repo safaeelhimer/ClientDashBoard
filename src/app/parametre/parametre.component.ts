@@ -50,7 +50,10 @@ export class ParametreComponent implements OnInit {
   onSubmit() {
     this.updateEmployee();    
   }
-
+  logout(){
+    localStorage.removeItem("currentClient");
+    this.router.navigate(['/login']);
+  }
   gotoList() {
     this.router.navigate(['/clients']);
   }

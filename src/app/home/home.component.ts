@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +10,15 @@ export class HomeComponent implements OnInit {
   //nom!:string;
   nom:string  = " "
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
     let nomClient = localStorage.getItem('nomClient')!
     this.nom = nomClient;
+  }
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
 }
