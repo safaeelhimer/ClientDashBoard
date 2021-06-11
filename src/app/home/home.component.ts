@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  //nom!:string;
+  nom:string  = " "
 
   constructor() { }
 
   ngOnInit(): void {
+    let nomClient = localStorage.getItem('nomClient')!
+    this.nom = nomClient;
   }
 
 }

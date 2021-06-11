@@ -28,39 +28,45 @@
         <p class="mb-0">Vos information personnel du site web</p>
       </blockquote>
     <br>
-          <form>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputPassword4">Nom</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Nom" >
-              </div>
-              <br>
-              <div class="form-group col-md-6">
-                <label for="inputPassword4">Prenom</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Prenom" >
-              </div>
+
+    <div *ngIf="client">
+      <div class="form-row" >
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Nom</label> : {{client.nom}}
+          
+        </div>
+        <br>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Prenom</label> : {{client.prenom}}
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword4">CIN</label> : {{client.cin}}
+          
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="inputPassword4">Numero de telephone</label> : {{client.tel}}
+        </div>
+
+    </div>
+          <form (ngSubmit)="onSubmit()">
+            <div class="form-row" >
+             
               <br>
             </div>
               <div class="form-group">
                 <label for="validationServer01">Email</label>
-                <input type="email" id="validationServer01" class="form-control" placeholder="Email" >
+                <input type="email" name="email" id="validationServer01" class="form-control" required ngModel   placeholder="Email" >
               </div>
               <br>
             <div class="form-group">
               <label for="inputPassword4">Passeword</label>
-              <input type="Passeword" class="form-control" id="inputPassword4" placeholder="Passeword" >
+              <input type="Passeword" name="mdp" class="form-control" id="inputPassword4" required ngModel   placeholder="Passeword" >
             </div>
             <br>
     
-          <div class="form-group">
-            <label for="inputPassword4">CNE</label>
-            <input type="text" class="form-control" id="inputPassword4" placeholder="CNE" >
-          </div>
-          <br>
-          <div class="form-group">
-            <label for="inputPassword4">Numero de telephone</label>
-            <input type="text" class="form-control" id="inputPassword4" value="212 " placeholder="num tel" >
-          </div>
+          
     
           <br>
            
@@ -73,7 +79,7 @@
                 </label>
               </div>
             </div><br>
-            <button type="submit" class="btn btn-primary">Changer</button>
+            <button type="submit" class="btn btn-primary">Modifier</button>
           </form>
 </div>
 </div>

@@ -31,7 +31,6 @@
     <thead class="thead-dark">
         
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Num Compte</th>
 
         <th scope="col">Solde</th>
@@ -39,12 +38,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>11412342342543</td>
-
-        <td>30 000.00 DH</td>
-
+      <tr *ngFor="let cmt of comptes">
+        <td>{{cmt.rib}}</td>
+        <td>{{cmt.solde}}</td>
       </tr>
       
     </tbody>
