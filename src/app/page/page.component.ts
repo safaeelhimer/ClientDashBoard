@@ -21,14 +21,16 @@ export class PageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.reloadData();
+    this.getComptes()
+    console.log("this "  ,this.client)
   }
   reloadData() {
     let id = localStorage.getItem('currentClient')!
     let client = this.compteService.getClient(id).subscribe((response:any) =>  {
-      this.client = response},(err :HttpErrorResponse)=> {console.log(err)}  
+      this.client = response; console.log(response)},(err :HttpErrorResponse)=> {console.log(err)}  
     );
-    let comptes= this.compteService.getClientComptes(this.client).subscribe((response:any) =>  {
+    console.log("client : ",this.client)
+    let comptes= this.compteService.getClientComptes(id).subscribe((response:any) =>  {
       this.comptes = response},(err :HttpErrorResponse)=> {console.log(err)}  
   );
     
@@ -37,5 +39,22 @@ export class PageComponent implements OnInit {
  // employeeDetails(id: number){
     //this.router.navigate(['details', id]);
   //}
+ 
+
+  public getComptes(){
+    
+    let id = localStorage.getItem('currentClient')!
+    this.compteService.getClientComptes(id).subscribe((response:any) =>  {
+      this.comptes = response},(err :HttpErrorResponse)=> {console.log(err)})
+
+  }
+
+ // employeeDetails(id: number){
+    //this.router.navigate(['details', id]);
+  //}
+  logout(){
+    localStorage.removeItem("currentClient");
+    this.router.navigate(['/login']);
+  }
 
 }

@@ -1,29 +1,108 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+  <img src="https://w7.pngwing.com/pngs/98/991/png-transparent-computer-icons-bank-icon-design-screenshot-bank-blue-angle-logo.png" alt="Agent">
 
-  
-  <div class="row content">
-
-    <div class="col-sm-3 sidenav">
-        <br>
-      <h4>Application</h4>
-      <br><br>
-          <a href="/page"><button type="button" class="btn btn-info btn-lg">Mes Compte Banquaire</button></a><br><br>
-          <a href="/parametre"><button type="button" class="btn btn-info btn-lg">Parametre</button></a><br><br>
-          <a href="/page1"><button type="button" class="btn btn-info btn-lg">Recharge telephonique</button></a><br><br>
-          <a href="/virement"><button type="button" class="btn btn-info btn-lg">Virement bancaire</button></a><br><br>
-     <br>
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search Blog..">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </span>
-      </div>
+  <div class="container">
+    <a class="navbar-brand" href="#" style="margin-left: -220px;"> <b> E-banking </b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive" >
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+              </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
     </div>
-    <br>
+    <button style="margin-right:  -200px;" class="button" (click)="logout()"> <span> Sign out </span></button>
+  </div>
+</nav>
+<br>
+<br>
+
+ 
+
+
+
+
+
+
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <br><br>              <br><br>
+
+          <li class="sidebar-brand">
+            <img  class="imgClient" src="https://freesvg.org/img/cliente.png"/><br>
+              <h1>
+                  E-banking Client 
+              </h1>
+          </li>
+          <br><br><br><br>
+          <br>
+          <li>
+              <a href="/page"> <b>Mes Comptes Banquaires</b></a>
+          </li><br>
+          <li>
+              <a href="/parametre"> <b>Paramétre</b></a>
+          </li><br>
+          <li>
+              <a href="/page1"> <b>Recharge téléphonique </b></a>
+          </li><br>
+          <li>
+              <a href="/virement"> <b>Virement bancaire </b></a>
+          </li>
+          
+      </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-lg-12">
+                  <h1>Simple Sidebar</h1>
+                  <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                  <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
-<div class="col-sm-9">
+  <div class="col-sm-9">
     <blockquote class="blockquote text-center">
         <p class="mb-0">Vos information personnel du site web</p>
       </blockquote>
@@ -48,8 +127,8 @@
         <div class="form-group">
           <label for="inputPassword4">Numero de telephone</label> : {{client.tel}}
         </div>
-
     </div>
+
           <form (ngSubmit)="onSubmit()">
             <div class="form-row" >
              
@@ -64,13 +143,9 @@
               <label for="inputPassword4">Passeword</label>
               <input type="Passeword" name="mdp" class="form-control" id="inputPassword4" required ngModel   placeholder="Passeword" >
             </div>
-            <br>
-    
-          
     
           <br>
-           
-    
+          
             <div class="form-group">
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -81,5 +156,8 @@
             </div><br>
             <button type="submit" class="btn btn-primary">Modifier</button>
           </form>
+
+
+
 </div>
 </div>

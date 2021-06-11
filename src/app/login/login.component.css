@@ -14,14 +14,6 @@
 	justify-content: center;
 	color: #fff;
 }
-img {
-	width: 140px;
-	height: 140px;
-	object-fit: cover;
-	border-radius: 50%;
-	margin: 4%;
-  }
-  
 .fa-android{
 	font-size:3em;
 }

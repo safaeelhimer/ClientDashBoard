@@ -39,18 +39,22 @@ export class VirementComponent implements OnInit {
     let client = this.compteService.getClient(id).subscribe((response:any) =>  {
       this.client = response},(err :HttpErrorResponse)=> {console.log(err)}  
     );
-    let comptes= this.compteService.getClientComptes(this.client).subscribe((response:any) =>  {
+    let comptes= this.compteService.getClientComptes(id).subscribe((response:any) =>  {
       this.comptes = response},(err :HttpErrorResponse)=> {console.log(err)}  
   );
     
   }
 
   onSubmit(versment: NgForm) {
-    let object!:objectVersement;
+    let object :objectVersement;
     object = versment.value;
     let a = this.compteService.VerserSoldeClient(object).subscribe((response:any) =>  {
       this.comptes = response},(err :HttpErrorResponse)=> {console.log(err)}  
   );
+  }
+  logout(){
+    localStorage.removeItem("currentClient");
+    this.router.navigate(['/login']);
   }
   
 

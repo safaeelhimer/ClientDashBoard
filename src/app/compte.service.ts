@@ -21,8 +21,9 @@ export class CompteService {
     return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
+
   public getClient(id: string): Observable<Client> {
-    return this.http.get<Client>(`${this.baseUrl}/${id}`);
+    return this.http.get<Client>(`${this.baseUrl}/getClient?id=${id}`);
   }
   public VerserSoldeClient(object: Object) {
     return this.http.post(`${this.baseUrl}/VerserSoldeClient`,object);
@@ -34,8 +35,9 @@ export class CompteService {
   public loginClient(client :Client): Observable<any> {
     return this.http.post<Client>(`${this.baseUrl}/loginClient`,client);
   }
-  public getClientComptes(client: Client): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/getClientComptes` , client);
+
+  public getClientComptes(id : String): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/getClientComptesid` , id);
   }
 
 }

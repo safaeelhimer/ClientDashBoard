@@ -1,71 +1,101 @@
-<div class="about-section">
-    <h1>Hello Mr.</h1> {{nom}}
-    <p>Bienvenue dans votre espace privee</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+  <img class="logo" src="https://w7.pngwing.com/pngs/98/991/png-transparent-computer-icons-bank-icon-design-screenshot-bank-blue-angle-logo.png" alt="Agent">
+
+  <div class="container">
+    <a class="navbar-brand" href="#" style="margin-left: -220px;"> <b>E-banking </b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive" >
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+              </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <button style="margin-right:  -200px;" class="button" (click)="logout()"> <span> Sign out </span></button>
   </div>
+</nav>
+<br>
+
+<section class="py-5">
+  <div class="container">
+    <div class="about-section" style="background-color:#0575a5;">
+      <h1> <b>Bonjour  Mr. {{nom}} </b> </h1>
+      <p>Bienvenue dans votre espace privée</p>
+    </div>
+    <br>
+    <h2 style="text-align:center"> <b>E-banking Services </b> </h2>
   
-  <h2 style="text-align:center">Bank Morocco</h2>
-
+    
   
-
-  
-  <div class="row">
-
-    <div class="column">
-      <div class="card">
-        <img src="assets/images/compte.png" alt="" style="width:100%">
-        <div class="container">
-          <h2>Mes Compte Banquaire</h2>
-          <p class="title">mes comptes</p>
-          <p>Pour acceder a tous vos compte diponible et votre </p>
-          <p>solde dans notre banque</p>
-          <p><a href="/page"><button class="button" > compte</button></a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="column">
-      <div class="card">
-        <img src="assets/images/parametre.png" alt="" style="width:100%">
-        <div class="container">
-          <h2>Parametre</h2>
-          <p class="title">parametre du site</p>
-          <p>Acceder au parametre de se site web</p>
-          <p>...</p>
-          <p><a href="/parametre"><button class="button">Parametre Site</button></a></p>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="column">
-      <div class="card">
-        <img src="assets/images/tel.png" alt="" style="width:100%">
-        <div class="container">
-          <h2>Effectuez une recharge  </h2>
-          <p class="title">Pour effectuez un recharge telephonique</p>
-          <p>.</p>
-          <p>.</p>
-          <p><a href="/page1"><button class="button">Recharge</button></a></p>
-        </div>
-      </div>
-    </div>
-
-    </div>
-
+    
     <div class="row">
-
-        <div class="column">
-          <div class="card">
-            <img src="assets/images/v.png" alt="" style="width:100%">
-            <div class="container">
-              <h2>Effectuez un virement</h2>
-              <p class="title">Pour effectuez un virement banquaire</p>
-              <p>a un autre compte</p>
-              <p>.</p>
-              <p>.</p>
-              <p><a href="/virement"><button class="button">Virement</button></a></p>
-            </div>
+  
+      <div class="column">
+        <div class="card">
+          <img src="assets/images/compte.png" alt="" style="width:100%">
+          <div class="container">
+            <h2>Mes Compte Banquaire</h2>
+            <p class="title">mes comptes</p>
+            <p>Pour acceder a tous vos compte diponible et votre </p>
+            <p>solde dans notre banque</p>
+            <p><a href="/page"><button class="button" > Accéder</button></a></p>
           </div>
         </div>
+      </div>
+  
+      <div class="column">
+        <div class="card">
+          <img src="assets/images/parametre.png" alt="" style="width:100%">
+          <div class="container">
+            <h2>Parametre</h2>
+            <p class="title">parametre du site</p>
+            <p>Acceder au parametre de se site web</p>
+            <p>...</p>
+            <p><a href="/parametre"><button class="button">Accéder</button></a></p>
+          </div>
+        </div>
+      </div>
+  
+  
+      <div class="column">
+        <div class="card">
+          <img src="assets/images/tel.png" alt="" style="width:100%">
+          <div class="container">
+            <h2>Effectuez une recharge  </h2>
+            <p class="title">Pour effectuez un recharge telephonique</p>
+            <p>.</p>
+            <p>.</p>
+            <p><a href="/page1"><button class="button">Accéder</button></a></p>
+          </div>
+        </div>
+      </div>
+  
+      </div>
+  
+      <div class="row">
+  
+          <div class="column">
+            <div class="card" >
+              <img src="assets/images/v.png" alt="" style="width:100%">
+              <div class="container">
+                <h2>Effectuez un virement</h2>
+                <p class="title">Pour effectuez un virement banquaire</p>
+                <p>a un autre compte</p>
+                <p>.</p>
+                <p>.</p>
+                <p><a href="/virement"><button class="button">Accéder</button></a></p>
+              </div>
+            </div>
+          </div>
+  
+      </div>
+  </div>
+</section>
 
-    </div>
+
