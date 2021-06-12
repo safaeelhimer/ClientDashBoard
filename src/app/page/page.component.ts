@@ -58,6 +58,7 @@ export class PageComponent implements OnInit {
   //}
   logout(){
     localStorage.removeItem("currentClient");
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 

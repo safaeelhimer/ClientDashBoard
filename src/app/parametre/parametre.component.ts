@@ -55,6 +55,7 @@ export class ParametreComponent implements OnInit {
   }
   logout(){
     localStorage.removeItem("currentClient");
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
   gotoList() {
