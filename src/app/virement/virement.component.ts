@@ -57,7 +57,8 @@ export class VirementComponent implements OnInit {
   }
   logout(){
     localStorage.removeItem("currentClient");
-    this.router.navigate(['/login']);
+    localStorage.clear();
+    this.router.navigate(['login']);
   }
   
 

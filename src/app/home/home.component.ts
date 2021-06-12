@@ -17,12 +17,12 @@ export class HomeComponent implements OnInit {
     let nomClient = localStorage.getItem('nomClient')!
     this.nom = nomClient;}
     else{
-      this.router.navigate(['/login'])
+      this.router.navigate(['login'])
     }
   }
   logout(){
     localStorage.clear();
-    this.router.navigate(['/login']);
+    this.router.navigate(['login']);
   }
 
 }
