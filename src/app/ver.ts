@@ -1,7 +1,6 @@
-import { Compte } from "./compte";
-
 export interface objectVersement {
-    c1: Compte;
+    c1: string;
     rib: number;
-    m: number;
+    rib2 : number,
+    montant: number;
 }

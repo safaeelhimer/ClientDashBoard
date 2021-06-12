@@ -48,12 +48,14 @@ export class VirementComponent implements OnInit {
     
   }
 
-  onSubmit(versment: NgForm) {
+  onSubmit(versement: NgForm) {
     let object :objectVersement;
-    object = versment.value;
+    object = versement.value;
+    object.c1 = this.id
     let a = this.compteService.VerserSoldeClient(object).subscribe((response:any) =>  {
       this.comptes = response},(err :HttpErrorResponse)=> {console.log(err)}  
   );
+  console.log("his",object);
   }
   logout(){
     localStorage.removeItem("currentClient");
@@ -62,10 +64,7 @@ export class VirementComponent implements OnInit {
   }
   
 
-  clicSurBouton(){
-
-    alert("BOnjour vous venez de charger le numero de telephone, pour envoyer un recu dans votre boite mail confirme");
-  }
+ 
 
 
 

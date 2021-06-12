@@ -71,14 +71,14 @@
                   <h1> <b> Passer Un Virement </b></h1>
                   <hr><br>
 
-                  <form #ajouterClient="ngForm" >
+                  <form class="form-group"  #versement='ngForm' (ngSubmit)="onSubmit(versement)">
     <div class="form-group">
-      <label for="nom"> <b>Numero de rib du compte destiner :  </b></label>
+      <label for="nom"> <b>Numero de RIB du compte destiner :  </b></label>
       <input type="text" class="form-control" id="rib" aria-describedby="rib" placeholder="Rib" ngModel name="rib" required>
     </div><br>
 
-        <label for="cin"> <b>Cin : </b> </label>
-        <input type="text" class="form-control" id="cin" aria-describedby="cin" placeholder="n° CIN" ngModel name="cin" required>
+        <label for="cin"> <b>mon RIB : </b> </label>
+        <input type="text" class="form-control" id="rib2" aria-describedby="mon rib" placeholder="mon rib" ngModel name="rib2" required>
         <br>
     <div class="form-group">
         <label for="solde"> <b>Montant : </b> </label>
@@ -92,7 +92,7 @@
           </label>
         </div>
       </div><br>
-      <button  [disabled]="!ajouterClient.valid" class="btn btn-lg btn-primary btn-block w-25 " style="margin-left:33%;" type="submit">Submit</button>
+      <button  [disabled]="!versement.valid" class="btn btn-lg btn-primary btn-block w-25 " style="margin-left:33%;" type="submit">Submit</button>
   </form >
               </div>
           </div>
