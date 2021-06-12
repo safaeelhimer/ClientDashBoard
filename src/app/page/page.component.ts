@@ -20,6 +20,10 @@ export class PageComponent implements OnInit {
   constructor(private compteService : CompteService, private router : Router) { }
 
   ngOnInit(): void {
+    if(!localStorage.getItem('nomClient')){
+      this.router.navigate(['/login'])
+        }
+
 
     this.getComptes()
     console.log("this "  ,this.client)

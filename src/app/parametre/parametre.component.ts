@@ -25,6 +25,9 @@ export class ParametreComponent implements OnInit {
   ngOnInit(): void{
    // this.client = new Client();\
    let currentClient = localStorage.getItem('currentClient');
+   if(!localStorage.getItem('nomClient')){
+    this.router.navigate(['/login'])
+      }
    let id = 'gg';
 
     //this.id = this.route.snapshot.params['id'];

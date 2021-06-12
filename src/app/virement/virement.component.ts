@@ -26,6 +26,9 @@ export class VirementComponent implements OnInit {
   constructor(private compteService : CompteService, private router : Router) { }
 
   ngOnInit(): void {
+    if(!localStorage.getItem('nomClient')){
+      this.router.navigate(['/login'])
+        }
     this.methode();
 
   }

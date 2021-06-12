@@ -19,6 +19,9 @@ export class Page1Component implements OnInit {
 
   ngOnInit(): void {
     let currentClient = localStorage.getItem('currentClient')
+    if(!localStorage.getItem('nomClient')){
+      this.router.navigate(['/login'])
+        }
   }
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
 

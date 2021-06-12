@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private compteService : CompteService,private router : Router) { }
 
   ngOnInit(): void {
-    let myLocalstorage = localStorage.getItem("currentAgent");
+    let myLocalstorage = localStorage.getItem("currentClient");
     if(myLocalstorage){
         this.router.navigate(['/home']);
     }

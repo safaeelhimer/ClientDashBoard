@@ -13,8 +13,12 @@ export class HomeComponent implements OnInit {
   constructor(private router : Router) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('nomClient')){
     let nomClient = localStorage.getItem('nomClient')!
-    this.nom = nomClient;
+    this.nom = nomClient;}
+    else{
+      this.router.navigate(['/login'])
+    }
   }
   logout(){
     localStorage.clear();
